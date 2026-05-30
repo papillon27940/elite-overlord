@@ -162,7 +162,8 @@ export async function createTicket(guild, member, categoryId, reason = 'No reaso
     
     const embed = createEmbed({
       title: `Ticket #${ticketNumber}`,
-      description: `${member.toString()}, thanks for creating a ticket!\n\n**Reason:** ${reason}\n**Priority:** ${priorityInfo.emoji} ${priorityInfo.label}`,
+      description: `${member.toString()}, rdm rentre chez toi si ta pas 20m\n\n**Reason:** ${reason}\n**Priority:** ${priorityInfo.emoji} ${priorityInfo.label}`,
+      const IMAGE_URL = "https://www.bing.com/images/search?view=detailV2&ccid=sN7zXFhx&id=3D1AADE7D97048784BB98877EA2A332DF4DF4837&thid=OIP.sN7zXFhxCF5nuXoreDGdrwHaHa&mediaurl=https%3a%2f%2fcdnb.artstation.com%2fp%2fmarketplace%2fpresentation_assets%2f003%2f430%2f263%2flarge%2ffile.jpg%3f1706950302&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.b0def35c5871085e67b97a2b78319daf%3frik%3dN0jf9C0zKup3iA%26pid%3dImgRaw%26r%3d0&exph=1024&expw=1024&q=image&FORM=IRPRST&ck=5AAABF0FAE9BD755CACC8142304B35A9&selectedIndex=11&itb=0";
       color: priorityInfo.color,
       fields: [
         { name: 'Status', value: '🟢 Open', inline: true },
