@@ -159,9 +159,29 @@ export async function createTicket(guild, member, categoryId, reason = 'No reaso
     await saveTicketData(guild.id, channel.id, ticketData);
     
     const priorityInfo = PRIORITY_MAP[priority] || PRIORITY_MAP.none;
-    
-const embed = createEmbed({ title: `Ticket #${ticketNumber}`, description: `${member.toString()}, rdm rentre chez toi si ta pas 20m\n\n**Reason:** ${reason}\n**Priority:** ${priorityInfo.emoji} ${priorityInfo.label}`, color: priorityInfo.color, fields: [ { name: 'Status', value: '🟢 Open', inline: true }, { name: 'Claimed By', value: 'Not claimed', inline: true }, { name: 'Created', value: `<t:${Math.floor(Date.now() / 1000)}:R>`, inline: true }, ], });
-    
+
+    const embed = createEmbed({
+  title: `Ticket #${ticketNumber}`,
+  description: `${member.toString()}, rdm rentre chez toi si ta pas 20m\n\n**Reason:** ${reason}\n**Priority:** ${priorityInfo.emoji} ${priorityInfo.label}`,
+  color: priorityInfo.color,
+  fields: [
+    {
+      name: 'Status',
+      value: '🟢 Open',
+      inline: true
+    },
+    {
+      name: 'Claimed By',
+      value: 'Not claimed',
+      inline: true
+    },
+    {
+      name: 'Created',
+      value: `<t:${Math.floor(Date.now() / 1000)}:R>`,
+      inline: true
+    },
+  ],
+});
     const row = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
         .setCustomId('ticket_close')
