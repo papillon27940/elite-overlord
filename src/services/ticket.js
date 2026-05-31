@@ -691,7 +691,7 @@ export async function reopenTicket(channel, reopener) {
     
     const reopenEmbed = createEmbed({
       title: 'Ticket Reopened',
-      description: `🔓 ${reopener} has reopened this ticket!`,
+      description: `🔓 ${reopener} a reouvert le ticket!`,
       color: '#2ecc71'
     });
 
