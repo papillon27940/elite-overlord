@@ -158,6 +158,7 @@ if (priority !== 'none') {
       claimedBy: null,
       priority: priority || 'none',
       reason,
+      pingRoleId: "1412455930406240388",
     };
     
     await saveTicketData(guild.id, channel.id, ticketData);
