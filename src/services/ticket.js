@@ -1098,7 +1098,7 @@ export async function unclaimTicket(channel, unclaimer) {
     } else {
       const unclaimEmbed = createEmbed({
         title: 'Ticket Unclaim',
-        description: `🔓 ${unclaimer} a unclaimed ce ticket!`,
+        description: `🔓 ${unclaimer} a unclaim ce ticket!`,
         color: '#f39c12'
       });
       
