@@ -5,10 +5,10 @@ import { getColor } from '../../config/bot.js';
 import { getGuildConfig } from '../../services/guildConfig.js';
 
 const STAR_LABELS = {
-    '1': '⭐ 1 — Poor',
-    '2': '⭐⭐ 2 — Below Average',
-    '3': '⭐⭐⭐ 3 — Average',
-    '4': '⭐⭐⭐⭐ 4 — Good',
+    '1': '⭐ 1 — nul',
+    '2': '⭐⭐ 2 — bon',
+    '3': '⭐⭐⭐ 3 — bien',
+    '4': '⭐⭐⭐⭐ 4 — très bien',
     '5': '⭐⭐⭐⭐⭐ 5 — Excellent',
 };
 
@@ -123,10 +123,10 @@ export default {
 
         // Edit the DM message to remove the select and show thanks
         const thankYouEmbed = new EmbedBuilder()
-            .setTitle('✅ Thanks for your feedback!')
-            .setDescription(`You rated your support experience **${ratingLabel}**.\n\nYour feedback has been recorded and helps us improve!`)
+            .setTitle('✅ merci pour ta note !')
+            .setDescription(`Vous avez évalué notre expérience **${ratingLabel}**.\n\nVos commentaires ont été enregistrés et nous aident à nous améliorer!`)
             .setColor(getColor('success'))
-            .setFooter({ text: 'Thank you for using our support system.' })
+            .setFooter({ text: 'merci d'avoir votée.' })
             .setTimestamp();
 
         await interaction.update({
