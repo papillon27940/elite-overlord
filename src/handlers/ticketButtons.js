@@ -651,7 +651,7 @@ const reopenTicketHandler = {
       const result = await reopenTicket(interaction.channel, interaction.member);
       
       if (result.success) {
-        let reopenMessage = 'You have successfully reopened this ticket!';
+        let reopenMessage = 'tu as reussi a reouvrir ce ticket !';
         if (result.openCategoryMoveFailed) {
           reopenMessage += '\n\n⚠️ The ticket was reopened, but it could not be moved to the configured open ticket category.';
         }
