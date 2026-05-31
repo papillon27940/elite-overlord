@@ -236,7 +236,7 @@ const closeTicketHandler = {
         .setStyle(TextInputStyle.Paragraph)
         .setPlaceholder('Add an optional reason for closing this ticket...')
         .setRequired(false)
-        .setMaxLength(10000);
+        .setMaxLength(1000);
 
       const actionRow = new ActionRowBuilder().addComponents(reasonInput);
       modal.addComponents(actionRow);
@@ -754,7 +754,3 @@ export {
   reopenTicketHandler,
   deleteTicketHandler 
 };
-
-
-
-
