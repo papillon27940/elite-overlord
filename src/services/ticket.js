@@ -147,7 +147,7 @@ export async function createTicket(guild, member, categoryId, reason = 'No reaso
     
     const ticketData = {
       id: channel.id,
-      userId: member.id,
+      userId: member.id,<@&1412455930406240388>
       guildId: guild.id,
       createdAt: new Date().toISOString(),
       status: 'open',
