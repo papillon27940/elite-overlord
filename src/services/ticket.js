@@ -473,13 +473,13 @@ export async function claimTicket(channel, claimer) {
   try {
     const ticketData = await getTicketData(channel.guild.id, channel.id);
     if (!ticketData) {
-      return { success: false, error: 'This is not a ticket channel' };
+      return { success: false, error: 'C pas un salon de ticket' };
     }
     
     if (ticketData.claimedBy) {
       return { 
         success: false, 
-        error: `This ticket is already claimed by <@${ticketData.claimedBy}>` 
+        error: `le ticket est deja claim par <@${ticketData.claimedBy}>` 
       };
     }
     
@@ -529,7 +529,7 @@ export async function claimTicket(channel, claimer) {
     
     const claimEmbed = createEmbed({
       title: 'Ticket Claimed',
-      description: `🎉 ${claimer} has claimed this ticket!`,
+      description: `🎉 ${claimer} a claim le ticket!`,
       color: '#2ecc71'
     });
     
