@@ -309,8 +309,8 @@ export async function closeTicket(channel, closer, reason = 'No reason provided'
         const ticketCreator = await channel.client.users.fetch(ticketData.userId).catch(() => null);
         if (ticketCreator) {
           const dmEmbed = createEmbed({
-            title: '🎫 ton tikcet a été fermer',
-            description: `ton ticket **${channel.name}** a été fermer.\n\n**Reason:** ${reason}\n**Closed by:** ${closer.tag}\n**Closed at:** <t:${Math.floor(Date.now() / 1000)}:F>\n\nmerci d'avoir ouvert un ticket n'hesite pas a en re ouvrir un plus tard.`,
+            title: '🎫 ton ticket a été fermée',
+            description: `ton ticket **${channel.name}** a été fermée.\n\n**Reason:** ${reason}\n**Closed by:** ${closer.tag}\n**Closed at:** <t:${Math.floor(Date.now() / 1000)}:F>\n\nmerci d'avoir ouvert un ticket n'hesite pas a en re ouvrir un plus tard.`,
             color: '#e74c3c',
             footer: { text: `Ticket ID: ${ticketData.id}` }
           });
@@ -405,8 +405,8 @@ components: []
     }
     
     const closeEmbed = createEmbed({
-      title: 'Ticket fermer',
-      description: `ce ticket a été fermer par ${closer}.\n**Reason:** ${reason}${dmOnClose ? '\n\n📩 un DM a été envoyer au createur du ticket.' : ''}`,
+      title: 'Ticket fermée',
+      description: `ce ticket a été fermée par ${closer}.\n**Reason:** ${reason}${dmOnClose ? '\n\n📩 un DM a été envoyer au createur du ticket.' : ''}`,
       color: '#e74c3c',
       footer: { text: `Ticket ID: ${ticketData.id}` }
     });
@@ -1086,8 +1086,8 @@ export async function unclaimTicket(channel, unclaimer) {
     
     if (claimMessage) {
       const unclaimEmbed = createEmbed({
-        title: 'Ticket Unclaimed',
-        description: `🔓 ${unclaimer} has unclaimed this ticket!`,
+        title: 'Ticket Unclaim',
+        description: `🔓 ${unclaimer} a unclaim ce ticket!`,
         color: '#f39c12'
       });
       
