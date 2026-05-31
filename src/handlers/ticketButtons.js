@@ -594,7 +594,7 @@ const unclaimTicketHandler = {
       
       if (result.success) {
         await interaction.editReply({
-          embeds: [successEmbed('Ticket Unclaimed', 'You have successfully unclaimed this ticket!')],
+          embeds: [successEmbed('Ticket Unclaim', 'tu as reussi a unclaim ce ticket !')],
           flags: MessageFlags.Ephemeral
         });
       } else {
