@@ -531,7 +531,7 @@ export async function claimTicket(channel, claimer) {
       title: 'Ticket Claim',
       description: `🎉 ${claimer} a claim le ticket!`,
       color: '#2ecc71'
-    });
+    });ffffffffffffffff
     
     const unclaimRow = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
@@ -1097,8 +1097,8 @@ export async function unclaimTicket(channel, unclaimer) {
       });
     } else {
       const unclaimEmbed = createEmbed({
-        title: 'Ticket Unclaimed',
-        description: `🔓 ${unclaimer} has unclaimed this ticket!`,
+        title: 'Ticket Unclaim',
+        description: `🔓 ${unclaimer} a unclaimed ce ticket!`,
         color: '#f39c12'
       });
       
