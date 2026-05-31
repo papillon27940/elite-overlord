@@ -139,7 +139,7 @@ const createTicketHandler = {
         .setStyle(TextInputStyle.Paragraph)
         .setPlaceholder('Describe your issue...')
         .setRequired(true)
-        .setMaxLength(10000);
+        .setMaxLength(100);
 
       const actionRow = new ActionRowBuilder().addComponents(reasonInput);
       modal.addComponents(actionRow);
