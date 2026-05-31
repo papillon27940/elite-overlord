@@ -69,7 +69,7 @@ export async function getUserTicketCount(guildId, userId) {
   }
 }
 
-export async function createTicket(guild, member, categoryId, reason = 'No reason provided', priority = 'none') {
+export async function createTicket(guild, member, categoryId, bounty/region/bluid/1V1/2V2/3V3 = 'No reason provided', priority = 'none') {
   try {
     const config = await getGuildConfig(guild.client, guild.id);
     const ticketConfig = config.tickets || {};
@@ -153,7 +153,7 @@ export async function createTicket(guild, member, categoryId, reason = 'No reaso
       status: 'open',
       claimedBy: null,
       priority: priority || 'none',
-      reason,
+      bounty/region/bluid/1V1/2V2/3V3,
     };
     
     await saveTicketData(guild.id, channel.id, ticketData);
@@ -238,7 +238,7 @@ export async function createTicket(guild, member, categoryId, reason = 'No reaso
         ticketNumber: ticketNumber,
         userId: member.id,
         executorId: member.id,
-        reason: reason,
+        bounty/region/bluid/1V1/2V2/3V3: reason,
         priority: priority || 'none',
         metadata: {
           channelId: channel.id,
@@ -271,7 +271,7 @@ export async function createTicket(guild, member, categoryId, reason = 'No reaso
   }
 }
 
-export async function closeTicket(channel, closer, reason = 'No reason provided') {
+export async function closeTicket(channel, closer, bounty/region/bluid/1V1/2V2/3V3 = 'No reason provided') {
   try {
     const ticketData = await getTicketData(channel.guild.id, channel.id);
     if (!ticketData) {
@@ -286,7 +286,7 @@ export async function closeTicket(channel, closer, reason = 'No reason provided'
     ticketData.status = 'closed';
     ticketData.closedBy = closer.id;
     ticketData.closedAt = new Date().toISOString();
-    ticketData.closeReason = reason;
+    ticketData.closebounty/region/bluid/1V1/2V2/3V3 = reason;
     
     await saveTicketData(channel.guild.id, channel.id, ticketData);
 
@@ -437,7 +437,7 @@ components: []
         ticketNumber: ticketData.id,
         userId: ticketData.userId,
         executorId: closer.id,
-        reason: reason,
+        bounty/region/bluid/1V1/2V2/3V3: reason,
         metadata: {
           dmSent: dmOnClose,
           closedAt: ticketData.closedAt,
@@ -616,7 +616,7 @@ export async function reopenTicket(channel, reopener) {
     ticketData.status = 'open';
     ticketData.closedBy = null;
     ticketData.closedAt = null;
-    ticketData.closeReason = null;
+    ticketData.closebounty/region/bluid/1V1/2V2/3V3 = null;
     
     await saveTicketData(channel.guild.id, channel.id, ticketData);
 
