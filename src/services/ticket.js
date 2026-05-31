@@ -162,7 +162,7 @@ export async function createTicket(guild, member, categoryId, reason = 'No reaso
     
     const embed = createEmbed({
       title: `Ticket #${ticketNumber}`,
-      description: `${member.toString()}, merci d'avoir ouvert un ticket un tryouter te prendras en charge bientot\n\n**bounty/region/bluid/1V1/2V2/3V3 :** ${reason}\n**Priority:** ${priorityInfo.emoji} ${priorityInfo.label}`,
+      description: `${member.toString()}, merci d'avoir ouvert un ticket un tryouter te prendras en charge bientot <@&1412455930406240388>\n\n**bounty/region/bluid/1V1/2V2/3V3 :** ${reason}\n**Priority:** ${priorityInfo.emoji} ${priorityInfo.label}`,
       color: priorityInfo.color,
       image: {
     url: 'https://thfvnext.bing.com/th/id/OIP.vQqYiLL-mzcrYOBpwNurQwHaD4?w=340&h=180&c=7&r=0&o=7&cb=thfvnextfalcon&pid=1.7&rm=3'
