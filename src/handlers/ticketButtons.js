@@ -135,11 +135,11 @@ const createTicketHandler = {
 
       const reasonInput = new TextInputBuilder()
         .setCustomId('reason')
-        .setLabel('nombre de bounty/region et ton bluid / si c en 1V1 / 2V2 / 3V3')
+        .setLabel('bounty/region/bluid/1V1/2V2/3V3')
         .setStyle(TextInputStyle.Paragraph)
         .setPlaceholder('Describe your issue...')
         .setRequired(true)
-        .setMaxLength(100);
+        .setMaxLength(1000);
 
       const actionRow = new ActionRowBuilder().addComponents(reasonInput);
       modal.addComponents(actionRow);
