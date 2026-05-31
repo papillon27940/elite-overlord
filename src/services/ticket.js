@@ -107,7 +107,6 @@ export async function createTicket(guild, member, categoryId, reason = 'No reaso
     const ticketNumber = await getNextTicketNumber(guild.id);
     
     let channelName = `tryout-${ticketNumber}`;
-    const username = interaction.user.username;
     
     if (priority !== 'none') {
       const priorityInfo = PRIORITY_MAP[priority];
