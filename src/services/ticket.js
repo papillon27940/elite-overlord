@@ -162,10 +162,10 @@ export async function createTicket(guild, member, categoryId, reason = 'No reaso
 
     const embed = createEmbed({
   title: `Ticket #${ticketNumber}`,
-  description: `${member.toString()}, rdm rentre chez toi si ta pas 20m\n\n**rdm:** ${reason}\n**Priority:** ${priorityInfo.emoji} ${priorityInfo.label}`,
+  description: `${member.toString()}, merci d'avoir ouvert un ticket un trouter te prendras en charge bientot 20m\n\n**merci de préciser ton nombre de bounty ainsi ta region que ton bluid et si c en 1V1 / 2V2 / 3V3 ect:** ${reason}\n**Priority:** ${priorityInfo.emoji} ${priorityInfo.label}`,
   color: priorityInfo.color,
   image: {
-    url: 'https://thfvnext.bing.com/th/id/OIP.sN7zXFhxCF5nuXoreDGdrwHaHa?w=191&h=191&c=7&r=0&o=7&cb=thfvnextfalcon&pid=1.7&rm=3'
+    url: 'https://thfvnext.bing.com/th/id/OIP.vQqYiLL-mzcrYOBpwNurQwHaD4?w=340&h=180&c=7&r=0&o=7&cb=thfvnextfalcon&pid=1.7&rm=3'
   },
   fields: [
     {
