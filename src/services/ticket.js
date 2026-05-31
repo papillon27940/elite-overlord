@@ -106,7 +106,8 @@ export async function createTicket(guild, member, categoryId, reason = 'No reaso
     
     const ticketNumber = await getNextTicketNumber(guild.id);
     
-    let channelName = `ticket-${ticketNumber} yaaa`;
+    let channelName = `tryout-${ticketNumber}`;
+    const username = interaction.user.username;
     
     if (priority !== 'none') {
       const priorityInfo = PRIORITY_MAP[priority];
@@ -161,7 +162,7 @@ export async function createTicket(guild, member, categoryId, reason = 'No reaso
     const priorityInfo = PRIORITY_MAP[priority] || PRIORITY_MAP.none;
     
     const embed = createEmbed({
-      title: `Ticket #${ticketNumber}`,
+      title: `Tryout #${ticketNumber}`,
       description: `${member.toString()}, merci d'avoir ouvert un ticket un tryouter te prendras en charge bientot <@&1412455930406240388>\n\n**bounty/region/bluid/1V1/2V2/3V3 :** ${reason}\n**Priority:** ${priorityInfo.emoji} ${priorityInfo.label}`,
       color: priorityInfo.color,
       image: {
