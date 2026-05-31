@@ -135,7 +135,7 @@ const createTicketHandler = {
 
       const reasonInput = new TextInputBuilder()
         .setCustomId('reason')
-        .setLabel('merci de préciser ton nombre de bounty/region et que ton bluid et si c en 1V1 / 2V2 / 3V3')
+        .setLabel('nombre de bounty/region et ton bluid / si c en 1V1 / 2V2 / 3V3')
         .setStyle(TextInputStyle.Paragraph)
         .setPlaceholder('Describe your issue...')
         .setRequired(true)
