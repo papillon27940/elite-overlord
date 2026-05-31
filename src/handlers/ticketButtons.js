@@ -291,7 +291,7 @@ const closeTicketModalHandler = {
 
       if (result.success) {
         await interaction.editReply({
-          embeds: [successEmbed('Ticket Closed', 'This ticket has been closed.')],
+          embeds: [successEmbed('Ticket fermée', 'ce ticket a été fermée.')],
           flags: MessageFlags.Ephemeral
         });
       } else {
@@ -348,7 +348,7 @@ const claimTicketHandler = {
       
       if (result.success) {
         await interaction.editReply({
-          embeds: [successEmbed('Ticket Claimed', 'You have successfully claimed this ticket!')],
+          embeds: [successEmbed('Ticket Claim', 'tu a reussi a claim ce ticket !')],
           flags: MessageFlags.Ephemeral
         });
       } else {
@@ -716,7 +716,7 @@ const deleteTicketHandler = {
       
       if (result.success) {
         await interaction.editReply({
-          embeds: [successEmbed('Ticket Deleted', 'This ticket will be permanently deleted in 3 seconds.')],
+          embeds: [successEmbed('Ticket supprimer', 'ce ticket seras supprimer dans 3 secondes.')],
           flags: MessageFlags.Ephemeral
         });
       } else {
