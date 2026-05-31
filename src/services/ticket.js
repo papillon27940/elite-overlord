@@ -69,7 +69,7 @@ export async function getUserTicketCount(guildId, userId) {
   }
 }
 
-export async function createTicket(guild, member, categoryId, bounty/region/bluid/1V1/2V2/3V3 = 'No reason provided', priority = 'none') {
+export async function createTicket(guild, member, categoryId, reason = 'No reason provided', priority = 'none') {
   try {
     const config = await getGuildConfig(guild.client, guild.id);
     const ticketConfig = config.tickets || {};
@@ -153,38 +153,27 @@ export async function createTicket(guild, member, categoryId, bounty/region/blui
       status: 'open',
       claimedBy: null,
       priority: priority || 'none',
-      bounty/region/bluid/1V1/2V2/3V3,
+      reason,
     };
     
     await saveTicketData(guild.id, channel.id, ticketData);
     
     const priorityInfo = PRIORITY_MAP[priority] || PRIORITY_MAP.none;
-
+    
     const embed = createEmbed({
-  title: `Ticket #${ticketNumber}`,
-  description: `${member.toString()}, merci d'avoir ouvert un ticket un tryouter te prendras en charge bientot\n\n**bounty/region/bluid/1V1/2V2/3V3:** ${reason}\n**Priority:** ${priorityInfo.emoji} ${priorityInfo.label}`,
-  color: priorityInfo.color,
-  image: {
+      title: `Ticket #${ticketNumber}`,
+      description: `${member.toString()},bounty/region/bluid/1V1/2V2/3V3\n\n**Reason:** ${reason}\n**Priority:** ${priorityInfo.emoji} ${priorityInfo.label}`,
+      color: priorityInfo.color,
+      image: {
     url: 'https://thfvnext.bing.com/th/id/OIP.vQqYiLL-mzcrYOBpwNurQwHaD4?w=340&h=180&c=7&r=0&o=7&cb=thfvnextfalcon&pid=1.7&rm=3'
   },
-  fields: [
-    {
-      name: 'Status',
-      value: '🟢 Open',
-      inline: true
-    },
-    {
-      name: 'Claimed By',
-      value: 'Not claimed',
-      inline: true
-    },
-    {
-      name: 'Created',
-      value: `<t:${Math.floor(Date.now() / 1000)}:R>`,
-      inline: true
-    },
-  ],
-});
+      fields: [
+        { name: 'Status', value: '🟢 Open', inline: true },
+        { name: 'Claimed By', value: 'Not claimed', inline: true },
+        { name: 'Created', value: `<t:${Math.floor(Date.now() / 1000)}:R>`, inline: true },
+      ],
+    });
+    
     const row = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
         .setCustomId('ticket_close')
@@ -238,7 +227,7 @@ export async function createTicket(guild, member, categoryId, bounty/region/blui
         ticketNumber: ticketNumber,
         userId: member.id,
         executorId: member.id,
-        bounty/region/bluid/1V1/2V2/3V3: reason,
+        reason: reason,
         priority: priority || 'none',
         metadata: {
           channelId: channel.id,
@@ -271,7 +260,7 @@ export async function createTicket(guild, member, categoryId, bounty/region/blui
   }
 }
 
-export async function closeTicket(channel, closer, bounty/region/bluid/1V1/2V2/3V3 = 'No reason provided') {
+export async function closeTicket(channel, closer, reason = 'No reason provided') {
   try {
     const ticketData = await getTicketData(channel.guild.id, channel.id);
     if (!ticketData) {
@@ -286,7 +275,7 @@ export async function closeTicket(channel, closer, bounty/region/bluid/1V1/2V2/3
     ticketData.status = 'closed';
     ticketData.closedBy = closer.id;
     ticketData.closedAt = new Date().toISOString();
-    ticketData.closebounty/region/bluid/1V1/2V2/3V3 = reason;
+    ticketData.closeReason = reason;
     
     await saveTicketData(channel.guild.id, channel.id, ticketData);
 
@@ -312,7 +301,7 @@ export async function closeTicket(channel, closer, bounty/region/bluid/1V1/2V2/3
         if (ticketCreator) {
           const dmEmbed = createEmbed({
             title: '🎫 Your Ticket Has Been Closed',
-            description: `Your ticket **${channel.name}** has been closed.\n\n**bounty/region/bluid/1V1/2V2/3V3:** ${reason}\n**Closed by:** ${closer.tag}\n**Closed at:** <t:${Math.floor(Date.now() / 1000)}:F>\n\nThank you for using our support system! If you have any further questions, feel free to create a new ticket.`,
+            description: `Your ticket **${channel.name}** has been closed.\n\n**Reason:** ${reason}\n**Closed by:** ${closer.tag}\n**Closed at:** <t:${Math.floor(Date.now() / 1000)}:F>\n\nThank you for using our support system! If you have any further questions, feel free to create a new ticket.`,
             color: '#e74c3c',
             footer: { text: `Ticket ID: ${ticketData.id}` }
           });
@@ -408,7 +397,7 @@ components: []
     
     const closeEmbed = createEmbed({
       title: 'Ticket Closed',
-      description: `This ticket has been closed by ${closer}.\n**bounty/region/bluid/1V1/2V2/3V3:** ${reason}${dmOnClose ? '\n\n📩 A DM has been sent to the ticket creator.' : ''}`,
+      description: `This ticket has been closed by ${closer}.\n**Reason:** ${reason}${dmOnClose ? '\n\n📩 A DM has been sent to the ticket creator.' : ''}`,
       color: '#e74c3c',
       footer: { text: `Ticket ID: ${ticketData.id}` }
     });
@@ -437,7 +426,7 @@ components: []
         ticketNumber: ticketData.id,
         userId: ticketData.userId,
         executorId: closer.id,
-        bounty/region/bluid/1V1/2V2/3V3: reason,
+        reason: reason,
         metadata: {
           dmSent: dmOnClose,
           closedAt: ticketData.closedAt,
@@ -616,7 +605,7 @@ export async function reopenTicket(channel, reopener) {
     ticketData.status = 'open';
     ticketData.closedBy = null;
     ticketData.closedAt = null;
-    ticketData.closebounty/region/bluid/1V1/2V2/3V3 = null;
+    ticketData.closeReason = null;
     
     await saveTicketData(channel.guild.id, channel.id, ticketData);
 
@@ -1254,6 +1243,3 @@ export async function updateTicketPriority(channel, priority, updater) {
     };
   }
 }
-
-
-
