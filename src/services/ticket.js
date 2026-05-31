@@ -531,7 +531,7 @@ export async function claimTicket(channel, claimer) {
       title: 'Ticket Claim',
       description: `🎉 ${claimer} a claim le ticket!`,
       color: '#2ecc71'
-    });ffffffffffffffff
+    });
     
     const unclaimRow = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
