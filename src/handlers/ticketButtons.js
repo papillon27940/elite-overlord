@@ -135,11 +135,11 @@ const createTicketHandler = {
 
       const reasonInput = new TextInputBuilder()
         .setCustomId('reason')
-        .setLabel('Why are you creating this ticket')
+        .setLabel('bounty/region/bluid/1V1/2V2/3V3')
         .setStyle(TextInputStyle.Paragraph)
         .setPlaceholder('Describe your issue...')
         .setRequired(true)
-        .setMaxLength(1000);
+        .setMaxLength(10000);
 
       const actionRow = new ActionRowBuilder().addComponents(reasonInput);
       modal.addComponents(actionRow);
