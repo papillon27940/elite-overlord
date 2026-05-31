@@ -405,8 +405,8 @@ components: []
     }
     
     const closeEmbed = createEmbed({
-      title: 'Ticket Closed',
-      description: `This ticket has been closed by ${closer}.\n**Reason:** ${reason}${dmOnClose ? '\n\n📩 A DM has been sent to the ticket creator.' : ''}`,
+      title: 'Ticket fermer',
+      description: `ce ticket a été fermer par ${closer}.\n**Reason:** ${reason}${dmOnClose ? '\n\n📩 un DM a été envoyer au createur du ticket.' : ''}`,
       color: '#e74c3c',
       footer: { text: `Ticket ID: ${ticketData.id}` }
     });
@@ -528,7 +528,7 @@ export async function claimTicket(channel, claimer) {
     }
     
     const claimEmbed = createEmbed({
-      title: 'Ticket Claimed',
+      title: 'Ticket Claim',
       description: `🎉 ${claimer} a claim le ticket!`,
       color: '#2ecc71'
     });
