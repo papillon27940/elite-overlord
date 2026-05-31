@@ -414,12 +414,12 @@ components: []
     const controlRow = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
         .setCustomId('ticket_reopen')
-        .setLabel('Reopen Ticket')
+        .setLabel('Reouvrir Ticket')
         .setStyle(ButtonStyle.Success)
         .setEmoji('🔓'),
       new ButtonBuilder()
         .setCustomId('ticket_delete')
-        .setLabel('Delete Ticket')
+        .setLabel('suprimer Ticket')
         .setStyle(ButtonStyle.Danger)
         .setEmoji('🗑️')
     );
@@ -843,8 +843,8 @@ export async function deleteTicket(channel, deleter) {
     }
     
     const deleteEmbed = createEmbed({
-      title: 'Ticket Deleted',
-      description: `🗑️ This ticket will be permanently deleted in ${TICKET_DELETE_DELAY_SECONDS} seconds.`,
+      title: 'Ticket suprimer ',
+      description: `🗑️ ce ticket seras suprimer dans ${TICKET_DELETE_DELAY_SECONDS} seconds.`,
       color: '#e74c3c',
       footer: { text: `Ticket ID: ${ticketData.id}` }
     });
