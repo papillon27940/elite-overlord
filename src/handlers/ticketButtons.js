@@ -657,7 +657,7 @@ const reopenTicketHandler = {
         }
 
         await interaction.editReply({
-          embeds: [successEmbed('Ticket Reopened', reopenMessage)],
+          embeds: [successEmbed('Ticket Reouvert', reopenMessage)],
           flags: MessageFlags.Ephemeral
         });
       } else {
