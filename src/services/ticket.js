@@ -106,7 +106,7 @@ export async function createTicket(guild, member, categoryId, reason = 'No reaso
     
     const ticketNumber = await getNextTicketNumber(guild.id);
     
-    let channelName = `ticket-${ticketNumber}`;
+    let channelName = `ticket-${ticketNumber} yaaa`;
     
     if (priority !== 'none') {
       const priorityInfo = PRIORITY_MAP[priority];
