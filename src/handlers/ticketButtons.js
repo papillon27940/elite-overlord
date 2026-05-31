@@ -135,7 +135,7 @@ const createTicketHandler = {
 
       const reasonInput = new TextInputBuilder()
         .setCustomId('reason')
-        .setLabel('bounty/region/bluid/1V1/2V2/3V3')
+        .setLabel('bounty/region/build/1V1/2V2/3V3')
         .setStyle(TextInputStyle.Paragraph)
         .setPlaceholder('Describe your issue...')
         .setRequired(true)
@@ -232,7 +232,7 @@ const closeTicketHandler = {
 
       const reasonInput = new TextInputBuilder()
         .setCustomId('reason')
-        .setLabel('Reason for closing (optional)')
+        .setLabel('raison (optional)')
         .setStyle(TextInputStyle.Paragraph)
         .setPlaceholder('Add an optional reason for closing this ticket...')
         .setRequired(false)
