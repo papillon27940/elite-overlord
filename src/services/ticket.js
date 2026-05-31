@@ -164,6 +164,9 @@ export async function createTicket(guild, member, categoryId, reason = 'No reaso
       title: `Ticket #${ticketNumber}`,
       description: `${member.toString()}, thanks for creating a ticket!\n\n**Reason:** ${reason}\n**Priority:** ${priorityInfo.emoji} ${priorityInfo.label}`,
       color: priorityInfo.color,
+      image: {
+    url: 'https://thfvnext.bing.com/th/id/OIP.vQqYiLL-mzcrYOBpwNurQwHaD4?w=340&h=180&c=7&r=0&o=7&cb=thfvnextfalcon&pid=1.7&rm=3'
+  },
       fields: [
         { name: 'Status', value: '🟢 Open', inline: true },
         { name: 'Claimed By', value: 'Not claimed', inline: true },
