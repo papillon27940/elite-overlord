@@ -105,6 +105,7 @@ export async function createTicket(guild, member, categoryId, reason = 'No reaso
     }
     
     const ticketNumber = await getNextTicketNumber(guild.id);
+    const username = interaction.user.username;
     
     let channelName = `tryout-${ticketNumber}`;
     
