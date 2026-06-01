@@ -110,7 +110,7 @@ export async function createTicket(guild, member, categoryId, reason = 'No reaso
   .toLowerCase()
   .replace(/[^a-z0-9-]/g, '');
 
-let channelName = `tryout-${ticketNumber}-${username}`;
+let channelName = `war-${ticketNumber}-${username}`;
 
 if (priority !== 'none') {
   const priorityInfo = PRIORITY_MAP[priority];
@@ -165,8 +165,8 @@ if (priority !== 'none') {
     const priorityInfo = PRIORITY_MAP[priority] || PRIORITY_MAP.none;
     
     const embed = createEmbed({
-      title: `Tryout #${ticketNumber}`,
-      description: `${member.toString()}, merci d'avoir ouvert un ticket un tryouter te prendras en charge bientot\n\n**bounty/region/build/1V1/2V2/3V3 :** ${reason}\n**Priority:** ${priorityInfo.emoji} ${priorityInfo.label}`,
+      title: `war #${ticketNumber}`,
+      description: `${member.toString()}, merci d'avoir ouvert un ticket war\n\n**crew/region :** ${reason}\n**Priority:** ${priorityInfo.emoji} ${priorityInfo.label}`,
       color: priorityInfo.color,
       image: {
     url: 'https://thfvnext.bing.com/th/id/OIP.vQqYiLL-mzcrYOBpwNurQwHaD4?w=340&h=180&c=7&r=0&o=7&cb=thfvnextfalcon&pid=1.7&rm=3'
