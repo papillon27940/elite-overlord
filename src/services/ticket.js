@@ -106,7 +106,7 @@ export async function createTicket(guild, member, categoryId, reason = 'No reaso
 
     const ticketNumber = await getNextTicketNumber(guild.id);
     
-    const username = (member.displayName || member.user.username)
+    const username = member.user.username
   .toLowerCase()
   .replace(/[^a-z0-9-]/g, '');
 
