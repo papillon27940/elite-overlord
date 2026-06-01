@@ -214,10 +214,10 @@ if (priority !== 'none') {
 const AUTO_ROLE_ID = "";
 
 const staffMention = config.ticketStaffRoleId
-  ? ` ${config.ticketStaffRoleId}`
+  ? ` <@&${config.ticketStaffRoleId}>`
   : '';
 
-const messageContent = `${member.toString()} <@&${AUTO_ROLE_ID}>${staffMention}`;
+const messageContent = `${member.toString()} ${AUTO_ROLE_ID}${staffMention}`;
     
     const ticketMessage = await channel.send({ 
       content: messageContent,
