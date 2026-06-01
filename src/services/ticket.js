@@ -211,7 +211,7 @@ if (priority !== 'none') {
       );
     }
     
-const AUTO_ROLE_ID = "1412455930406240388";
+const AUTO_ROLE_ID = "";
 
 const staffMention = config.ticketStaffRoleId
   ? ` <@&${config.ticketStaffRoleId}>`
