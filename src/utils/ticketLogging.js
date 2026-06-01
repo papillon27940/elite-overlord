@@ -1,4 +1,4 @@
-﻿import { EmbedBuilder, ChannelType } from 'discord.js';
+﻿﻿﻿import { EmbedBuilder, ChannelType } from 'discord.js';
 import { getGuildConfig } from '../services/guildConfig.js';
 import { EVENT_TYPES } from '../services/loggingService.js';
 import { logger } from './logger.js';
@@ -231,24 +231,24 @@ function getEventDisplayInfo(event) {
   
   const eventMessages = {
     open: {
-      title: '🎫 Ticket Opened',
-      description: `A new ticket has been created: ${ticketRef}`
+      title: '🎫 Ticket ouvert',
+      description: `un nouveau ticket a été crée: ${ticketRef}`
     },
     close: {
-      title: '🔒 Ticket Closed',
-      description: `Ticket ${ticketRef} has been closed`
+      title: '🔒 Ticket fermée',
+      description: `Ticket ${ticketRef} a été fermée`
     },
     delete: {
-      title: '🗑️ Ticket Deleted',
-      description: `Ticket ${ticketRef} has been permanently deleted`
+      title: '🗑️ Ticket suprimer',
+      description: `Ticket ${ticketRef} a été suprimée`
     },
     claim: {
-      title: '🙋 Ticket Claimed',
-      description: `Ticket ${ticketRef} has been claimed`
+      title: '🙋 Ticket Claim',
+      description: `Ticket ${ticketRef} a été claim`
     },
     unclaim: {
       title: '🔓 Ticket Unclaimed',
-      description: `Ticket ${ticketRef} has been unclaimed`
+      description: `Ticket ${ticketRef} a été unclaim`
     },
     priority: {
       title: '🎯 Priority Updated',
@@ -256,7 +256,7 @@ function getEventDisplayInfo(event) {
     },
     transcript: {
       title: '📜 Transcript Created',
-      description: `Transcript generated for ticket ${ticketRef}`
+      description: `Transcript generér pour ticket ${ticketRef}`
     }
   };
   
@@ -309,6 +309,3 @@ export function validateLogChannel(channel, botMember) {
   
   return { valid: true };
 }
-
-
-
