@@ -135,7 +135,7 @@ const createTicketHandler = {
 
       const reasonInput = new TextInputBuilder()
         .setCustomId('reason')
-        .setLabel('Why are you creating this ticket?')
+        .setLabel('bounty/region/build/1V1/2V2/3V3')
         .setStyle(TextInputStyle.Paragraph)
         .setPlaceholder('Describe your issue...')
         .setRequired(true)
@@ -181,8 +181,8 @@ const createTicketModalHandler = {
       if (result.success) {
         await interaction.editReply({
           embeds: [successEmbed(
-            'Ticket Created',
-            `Your ticket has been created in ${result.channel}!`
+            'Ticket Crée',
+            `ton ticket a été crée dans ${result.channel}!`
           )]
         });
       } else {
@@ -232,7 +232,7 @@ const closeTicketHandler = {
 
       const reasonInput = new TextInputBuilder()
         .setCustomId('reason')
-        .setLabel('Reason for closing (optional)')
+        .setLabel('raison (optional)')
         .setStyle(TextInputStyle.Paragraph)
         .setPlaceholder('Add an optional reason for closing this ticket...')
         .setRequired(false)
@@ -291,7 +291,7 @@ const closeTicketModalHandler = {
 
       if (result.success) {
         await interaction.editReply({
-          embeds: [successEmbed('Ticket Closed', 'This ticket has been closed.')],
+          embeds: [successEmbed('Ticket fermée', 'ce ticket a été fermée.')],
           flags: MessageFlags.Ephemeral
         });
       } else {
@@ -348,7 +348,7 @@ const claimTicketHandler = {
       
       if (result.success) {
         await interaction.editReply({
-          embeds: [successEmbed('Ticket Claimed', 'You have successfully claimed this ticket!')],
+          embeds: [successEmbed('Ticket Claim', 'tu a reussi a claim ce ticket !')],
           flags: MessageFlags.Ephemeral
         });
       } else {
@@ -594,7 +594,7 @@ const unclaimTicketHandler = {
       
       if (result.success) {
         await interaction.editReply({
-          embeds: [successEmbed('Ticket Unclaimed', 'You have successfully unclaimed this ticket!')],
+          embeds: [successEmbed('Ticket Unclaim', 'tu as reussi a unclaim ce ticket !')],
           flags: MessageFlags.Ephemeral
         });
       } else {
@@ -651,13 +651,13 @@ const reopenTicketHandler = {
       const result = await reopenTicket(interaction.channel, interaction.member);
       
       if (result.success) {
-        let reopenMessage = 'You have successfully reopened this ticket!';
+        let reopenMessage = 'tu as reussi a reouvrir ce ticket !';
         if (result.openCategoryMoveFailed) {
           reopenMessage += '\n\n⚠️ The ticket was reopened, but it could not be moved to the configured open ticket category.';
         }
 
         await interaction.editReply({
-          embeds: [successEmbed('Ticket Reopened', reopenMessage)],
+          embeds: [successEmbed('Ticket Reouvert', reopenMessage)],
           flags: MessageFlags.Ephemeral
         });
       } else {
@@ -716,7 +716,7 @@ const deleteTicketHandler = {
       
       if (result.success) {
         await interaction.editReply({
-          embeds: [successEmbed('Ticket Deleted', 'This ticket will be permanently deleted in 3 seconds.')],
+          embeds: [successEmbed('Ticket supprimer', 'ce ticket seras supprimer dans 3 secondes.')],
           flags: MessageFlags.Ephemeral
         });
       } else {
@@ -754,7 +754,3 @@ export {
   reopenTicketHandler,
   deleteTicketHandler 
 };
-
-
-
-
