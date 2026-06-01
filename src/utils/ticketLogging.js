@@ -1,4 +1,4 @@
-﻿import { EmbedBuilder, ChannelType } from 'discord.js';
+﻿﻿import { EmbedBuilder, ChannelType } from 'discord.js';
 import { getGuildConfig } from '../services/guildConfig.js';
 import { EVENT_TYPES } from '../services/loggingService.js';
 import { logger } from './logger.js';
@@ -309,6 +309,3 @@ export function validateLogChannel(channel, botMember) {
   
   return { valid: true };
 }
-
-
-
