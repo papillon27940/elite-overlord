@@ -1,4 +1,4 @@
-import { getColor } from '../../config/bot.js';
+mport { getColor } from '../../config/bot.js';
 import { SlashCommandBuilder, PermissionFlagsBits, MessageFlags } from 'discord.js';
 import { errorEmbed, successEmbed } from '../../utils/embeds.js';
 import { logger } from '../../utils/logger.js';
@@ -97,6 +97,3 @@ export default {
         }
     },
 };
-
-
-
