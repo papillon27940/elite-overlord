@@ -1,4 +1,4 @@
-mport { getColor } from '../../config/bot.js';
+import { getColor } from '../../config/bot.js';
 import { SlashCommandBuilder, PermissionFlagsBits, MessageFlags } from 'discord.js';
 import { errorEmbed, successEmbed } from '../../utils/embeds.js';
 import { logger } from '../../utils/logger.js';
@@ -66,8 +66,8 @@ export default {
             await InteractionHelper.safeEditReply(interaction, {
                 embeds: [
                     successEmbed(
-                        "Ticket Claim!",
-                        "tu as reussi a claim ce ticket.",
+                        "Ticket Claimed !",
+                        "You have successfully claimed this ticket.",
                     ),
                 ],
             });
