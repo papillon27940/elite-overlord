@@ -166,7 +166,7 @@ if (priority !== 'none') {
     
     const embed = createEmbed({
       title: `war #${ticketNumber}`,
-      description: `${member.toString()}, merci d'avoir ouvert un ticket war\n\n**crew/region :** ${reason}\n**** ${priorityInfo.emoji} ${priorityInfo.label}`,
+      description: `${member.toString()}, merci d'avoir ouvert un ticket war\n\n**crew/region :** ${reason}\ `,
       image: {
     url: 'https://thfvnext.bing.com/th/id/OIP.vQqYiLL-mzcrYOBpwNurQwHaD4?w=340&h=180&c=7&r=0&o=7&cb=thfvnextfalcon&pid=1.7&rm=3'
   },
