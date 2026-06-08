@@ -1,4 +1,4 @@
-﻿﻿import { EmbedBuilder, ChannelType } from 'discord.js';
+﻿﻿﻿﻿﻿import { EmbedBuilder, ChannelType } from 'discord.js';
 import { getGuildConfig } from '../services/guildConfig.js';
 import { EVENT_TYPES } from '../services/loggingService.js';
 import { logger } from './logger.js';
@@ -230,25 +230,25 @@ function getEventDisplayInfo(event) {
   const ticketRef = event.ticketNumber ? `#${event.ticketNumber}` : event.ticketId ? `<#${event.ticketId}>` : 'Unknown';
   
   const eventMessages = {
-    open: {
-      title: '🎫 Ticket ouvert',
-      description: `un nouveau ticket a été crée: ${ticketRef}`
+      open: {
+      title: '🎫 Ticket Opened',
+      description: `A new ticket has been created: ${ticketRef}`
     },
     close: {
-      title: '🔒 Ticket fermée',
-      description: `Ticket ${ticketRef} a été fermée`
+      title: '🔒 Ticket Closed',
+      description: `Ticket ${ticketRef} has been closed`
     },
     delete: {
-      title: '🗑️ Ticket suprimer',
-      description: `Ticket ${ticketRef} a été suprimée`
+      title: '🗑️ Ticket Deleted',
+      description: `Ticket ${ticketRef} has been permanently deleted`
     },
     claim: {
-      title: '🙋 Ticket Claim',
-      description: `Ticket ${ticketRef} a été claim`
+      title: '🙋 Ticket Claimed',
+      description: `Ticket ${ticketRef} has been claimed`
     },
     unclaim: {
       title: '🔓 Ticket Unclaimed',
-      description: `Ticket ${ticketRef} a été unclaim`
+      description: `Ticket ${ticketRef} has been unclaimed`
     },
     priority: {
       title: '🎯 Priority Updated',
@@ -256,7 +256,7 @@ function getEventDisplayInfo(event) {
     },
     transcript: {
       title: '📜 Transcript Created',
-      description: `Transcript generér pour ticket ${ticketRef}`
+      description: `Transcript generated for ticket ${ticketRef}`
     }
   };
   
