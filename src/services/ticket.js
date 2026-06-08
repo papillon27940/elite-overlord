@@ -842,7 +842,7 @@ export async function deleteTicket(channel, deleter) {
     }
     
     const deleteEmbed = createEmbed({
-      title: 'Ticket suprimer ',
+      title: 'Ticket Deleted ',
       description: `🗑️ This ticket will be permanently deleted in ${TICKET_DELETE_DELAY_SECONDS} seconds.`,
       color: '#e74c3c',
       footer: { text: `Ticket ID: ${ticketData.id}` }
