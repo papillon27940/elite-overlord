@@ -232,7 +232,7 @@ const closeTicketHandler = {
 
       const reasonInput = new TextInputBuilder()
         .setCustomId('reason')
-        .setLabel('raison (optional)')
+        .setLabel('Reason for closing (optional)')
         .setStyle(TextInputStyle.Paragraph)
         .setPlaceholder('Add an optional reason for closing this ticket...')
         .setRequired(false)
