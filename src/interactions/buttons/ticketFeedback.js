@@ -5,10 +5,10 @@ import { getColor } from '../../config/bot.js';
 import { getGuildConfig } from '../../services/guildConfig.js';
 
 const STAR_LABELS = {
-    '1': '⭐ 1 — nul',
-    '2': '⭐⭐ 2 — mid',
-    '3': '⭐⭐⭐ 3 — bien',
-    '4': '⭐⭐⭐⭐ 4 — très bien',
+    '1': '⭐ 1 — bad',
+    '2': '⭐⭐ 2 — Average',
+    '3': '⭐⭐⭐ 3 — Good',
+    '4': '⭐⭐⭐⭐ 4 — Very Good',
     '5': '⭐⭐⭐⭐⭐ 5 — Excellent',
 };
 
@@ -121,10 +121,10 @@ const feedbackHandler = {
         await interaction.update({
             embeds: [
                 new EmbedBuilder()
-                    .setTitle('✅ merci pour ta note !')
-                    .setDescription(`Vous avez évalué notre expérience **${ratingLabel}**.\n\nton commentaires a été enregistrés et nous aident à nous améliorer!`)
+                    .setTitle('✅ Thanks for your feedback !')
+                    .setDescription(`You rated your support experience **${ratingLabel}**.\n\nYour feedback has been recorded and helps us improve !`)
                     .setColor(getColor('success'))
-                    .setFooter({ text: 'merci bonne journée.' })
+                    .setFooter({ text: 'Thank have a good day.' })
                     .setTimestamp(),
             ],
             components: [],
@@ -146,8 +146,8 @@ const declineHandler = {
         await interaction.update({
             embeds: [
                 new EmbedBuilder()
-                    .setTitle('👋 pas de probleme !')
-                    .setDescription('Vous pouvez toujours nous contacter à nouveau si vous avez besoin sur ce bonne journée.')
+                    .setTitle('👋 No problem !')
+                    .setDescription('You can always reach out again if you need further support.')
                     .setColor(getColor('default')),
             ],
             components: [],
